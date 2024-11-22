@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Presidents</title>
+</head>
+<body>
+
+    <h1>The Presidents:</h1>
+    <ul id="presidentList"></ul>
+    <button onclick="changePresident()">Change John F. Kennedy to Bill Clinton</button>
+
+    <script>
+        let presidents = [
+            "Abraham Lincoln",
+            "George Bush",
+            "Winston Churchill",
+            "Barack Obama",
+            "John F. Kennedy",
+        ];
+
+        function updateView() {
+            let list = document.getElementById('presidentList');
+            list.innerHTML = ''; // Tømmer listen før ny visning (oppdateres når knappen trykkes på)
+
+            for (let i = 0; i < presidents.length; i++) {
+                let li = document.createElement('li'); // Lager et nytt listeelement.
+                list.innerHTML += `<li>${presidents[i]}</li>`; // Printer ut presidentene i en liste.
+                
+            }
+        }
+            function changePresident() {
+            presidents[presidents.length - 1] = "Bill Clinton"; // Bytter siste navnet til "Bill Clinton"
+            updateView() // Oppdaterer nye endringer etter man har trykket på "button".
+            }
+            console.table(presidents); // Logger arrayet.
+  
+            updateView(); // Refresher lista når nettsiden laster inn første gangen.
+    </script>
+
+</body>
+</html>
